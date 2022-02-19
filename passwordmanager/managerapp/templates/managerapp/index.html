@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+</head>
+<body>
+
+    {% block 'body' %}
+<br>
+<h3 style="text-align: center;">Parolalarınız burada güvenle saklanır</h3><br><br>
+<hr>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Anahtar</th>
+                <th scope="col">Değer</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+    
+        <tbody>
+           {% for password, key, id in mylist %}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{password}}</td>
+                <td><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/565/565655.png" width="20" height="20" alt=""></a></td>
+                <td><a href="edit-record/{{id}}"><img src="https://cdn-icons-png.flaticon.com/512/1827/1827933.png" width="20" height="20" alt=""></a></td>
+                <td><a href="delete-record/{{id}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                  </svg></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <a href="{% url 'addpassword' %}" class="btn btn-primary">Parola Ekle</a>
+    
+</div>
+
+{% endblock 'body' %}
+
+</body>
+</html>

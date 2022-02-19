@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block 'body' %}
+<br>
+<div class="container">
+<img width="1000px" height="200px" src="data:image/png;base64,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" alt="">
+
+
+<form method="post">
+    {% csrf_token %}
+    <div class="card border-dark mb-3" style="max-width: 1000px;">
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+            <div class="card-body text-primary">
+
+            <label for="inputKey">Anahtar</label>
+            <input type="text" class="form-control" name="key" placeholder="{{record.key}}">
+        </div>
+    </div>
+
+        <div class="form-group col-md-6">
+            <div class="card-body text-primary">
+                <label for="inputValue">Parola</label>
+                <input type="text" name="password" class="form-control" placeholder="Parola">
+            </div>   
+        </div>
+    </div>
+    <input type="submit" name="submit" class="btn btn-primary btn-md" value="Parolayı Güncelle">
+</form>
+
+</div>
+</div>
+
+{% endblock 'body' %}
+
+
+
